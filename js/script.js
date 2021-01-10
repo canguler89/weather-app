@@ -7,7 +7,9 @@ const api = {
     baseURL: "http://api.openweathermap.org/data/2.5/"
 }
 
-fetch(`${api.baseURL}weather?q=houston&units=imperial&APPID=${api.key}`)
+fetch(`${api.baseURL}weather?q=houston&units=imperial&APPID=${api.key}`,{
+    method: 'GET',
+})
     .then(resp => resp.json())
     .then(function(temp){
         let tempMin=  Math.round(temp.main.temp_min)
